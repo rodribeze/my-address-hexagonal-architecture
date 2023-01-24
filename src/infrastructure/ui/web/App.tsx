@@ -20,7 +20,7 @@ function App() {
     }
   };
 
-  const renderField = (label: string, value: string | number) => {
+  const renderLabel = (label: string, value: string | number) => {
     return (
       <p>
         <strong>{label}:</strong> {value ?? "---"}
@@ -51,10 +51,10 @@ function App() {
       {loading && <>Waiting...</>}
       {!loading && address && (
         <pre className="bg-gray-100 rounded mt-4 p-5">
-          {renderField("Address", address?.address)}
-          {renderField("Neighborhood", address?.neighborhood)}
-          {renderField("City", address?.city)}
-          {renderField("State", address?.state)}
+          {renderLabel("Address", address?.address)}
+          {renderLabel("Neighborhood", address?.neighborhood)}
+          {renderLabel("City", address?.city)}
+          {renderLabel("State", address?.state)}
         </pre>
       )}
     </div>
