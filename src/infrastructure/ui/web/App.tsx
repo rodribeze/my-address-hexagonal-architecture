@@ -42,7 +42,7 @@ function App() {
         />
         <button
           disabled={!cep}
-          className="bg-indigo-800 text-white p-3 rounded"
+          className="bg-amber-600	 text-white p-3 rounded disabled:bg-gray-100 disabled:text-gray-400"
           onClick={fetchAddress}
         >
           Search
@@ -51,7 +51,6 @@ function App() {
       {loading && <>Waiting...</>}
       {!loading && address && (
         <pre className="bg-gray-100 rounded mt-4 p-5">
-          {renderField("Zip Code", address?.zip_code)}
           {renderField("Address", address?.address)}
           {renderField("Neighborhood", address?.neighborhood)}
           {renderField("City", address?.city)}
