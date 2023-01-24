@@ -41,7 +41,7 @@ function App() {
           className="w-full rounded"
         />
         <button
-          disabled={!cep}
+          disabled={!cep || loading}
           className="bg-amber-600	 text-white p-3 rounded disabled:bg-gray-100 disabled:text-gray-400"
           onClick={fetchAddress}
         >
