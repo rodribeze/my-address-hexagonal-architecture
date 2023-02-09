@@ -4,5 +4,5 @@ export const getAddressByZipCode = (
   addressRepository: IAddressRepository,
   zipCode: string
 ) => {
-  return addressRepository.getAddressByZipCode(zipCode?.padStart(8, "0"));
+  return addressRepository.getAddressByZipCode(zipCode);
 };

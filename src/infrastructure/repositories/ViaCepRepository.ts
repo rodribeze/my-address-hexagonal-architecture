@@ -3,7 +3,9 @@ import { IAddressRepository } from "./../../domains/Address/repository/IAddressR
 
 export class ViaCepRepository implements IAddressRepository {
   async getAddressByZipCode(zipCode: string): Promise<Address> {
-    const response = await fetch(`https://viacep.com.br/ws/${zipCode}/json/`);
+    const response = await fetch(
+      `https://viacep.com.br/ws/${String(zipCode)?.padStart(8, "0")}/json/`
+    );
 
     const data = (await response.json()) as any;
 
